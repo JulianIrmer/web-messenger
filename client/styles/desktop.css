@@ -63,14 +63,17 @@ body{
 }
 
 .add-contact-btn{
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 30px;
-  height: 30px;
-  margin: 10px 20px 10px 10px;
-  background-color: rgb(230,230,230);
+  width: 24px;
+  height: 24px;
+  float: left;
+  padding: 10px 0px 0px 10px;
+  background-color: rgb(100,100,255);
   border: 0;
+}
+
+.add-contact-btn > img {
+  width: 24px;
+  height: 24px;
 }
 
 .add-contact-form{
@@ -97,12 +100,17 @@ body{
 }
 
 .logout-btn{
-  position: absolute;
-  top: 20px;
-  left: 200px;
+  width: 24px;
+  height: 24px;
+  padding: 10px 0px 0px 0px;
+  float: right;
   border: 0;
   background-color: rgb(100,100,240);
-  color: rgb(137,0,0);
+}
+
+.logout-btn > img{
+  width: 24px;
+  height: 24px;
 }
 
 .search-input{

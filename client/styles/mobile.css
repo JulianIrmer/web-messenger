@@ -33,29 +33,32 @@ html{
   font-size: 150%;
 }
 
-.logout, .add-contact-btn{
-  position: absolute;
+.add-contact-btn, .logout-btn{
+  float: left;
+  margin-left: 13px;
   border: 0;
-  margin: 2px 13px 2px 2px;
-  right: 0;
-  top: 0;
-  width: 25px;
-  height: 25px;
+  background-color: rgb(100,100,255);
 }
 
-.logout{
-  left: 0px;
-  margin-left: 13px;
+.add-contact-btn{
+  margin-top: 5px;
+}
+
+.logout-btn{
+  float: right;
+  margin-right: 13px;
+}
+
+.logout-btn > img, .add-contact-btn > img{
+  width: 24px;
+  height: 24px;
 }
 
 .add-contact-input{
-  position: absolute;
-  top: 33px;
+  margin: 5px 0px 0px 10px;
   border: 0;
-  width: 90%;
+  width: 80%;
   visibility: visible;
-  margin-left: 50%;
-  transform: translateX(-50%);
   padding: 7px;
   transition: all 400ms ease-in-out;
 }
