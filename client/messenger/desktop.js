@@ -21,7 +21,6 @@ const openMenu = document.querySelector('.open-menu');
 const menu = document.querySelector('.menu');
 
 // GLOBAL VARIABLES 
-// let contactsArr = [];
 let currentUser;
 let userData;
 let contactsData;
@@ -34,10 +33,6 @@ let messagesData;
 // GET AND DISPLAY ALL CONTACTS
 window.onload = () => {
   getAllData();
-  // askForNotification();
-  // Notification.requestPermission().then(function(result) {
-  //   console.log(result);
-  // });
 };
 
 function getAllData() {
@@ -61,7 +56,6 @@ function getAllData() {
             updateLastMsg(el.name);
           };
         };
-        // document.querySelector('.title').innerText = currentUser;
         })
         .catch((err) => {if(err){console.error(err)}})
 };
@@ -207,14 +201,9 @@ function appendContact(el){
   name.className = 'p-name '+el.name;
   name.innerText = el.name;
 
-  // const pic = document.createElement('p');
-  // pic.textContent = 'PICTURE';
-  // pic.className = 'p-pic '+el.name;
-
   const lastmsg = document.createElement('p');
   lastmsg.className = 'p-lastmsg '+el.name;
   lastmsg.id = 'p-lastmsg ' +el.name;
-  // lastmsg.innerText = 'New contact added...';
 
   const date = document.createElement('p');
   date.className = 'p-date '+el.name;
@@ -224,7 +213,6 @@ function appendContact(el){
   devider.className = 'devider';
 
   // add all created elements to the ul
-  // li.appendChild(pic);
   li.appendChild(name);
   li.appendChild(lastmsg);
   li.appendChild(date);
@@ -250,11 +238,6 @@ function appendMessage(data){
   timeStamp.className = 'message-time-stamp';
   timeStamp.textContent = data.date.substring(11, 16);
 
-  const hook = document.createElement('span');
-  hook.className = 'message-hook';
-  // hook.textContent = '//';
-
-  msgBubble.appendChild(hook);
   msgBubble.appendChild(timeStamp);
   msgRow.appendChild(msgBubble);
 
@@ -269,9 +252,6 @@ function appendMessage(data){
   if(contactName.innerHTML == data.sender || contactName.innerHTML == data.recipient){
     messageArea.appendChild(msgRow);
   };
-  // msgBubble.appendChild(timeStamp);
-  // msgRow.appendChild(msgBubble);
-  // messageArea.appendChild(msgRow);
   scroll2bottom();
   updateLastMsg(data.sender);
 };
@@ -294,8 +274,6 @@ function displayMessages(name){
         appendMessage(el);
       };
     };
-    // contactArea.classList.add('hidden');
-    // contentArea.classList.remove('hidden');
   };
   
   scroll2bottom();
@@ -385,30 +363,3 @@ function sortList() {
     };
   };
 };
-
-// openMenu.addEventListener('click', (e) => {
-  
-// });
-
-// function askForNotification(){
-//   // Let's check if the browser supports notifications
-//   if (!("Notification" in window)) {
-//     alert("This browser does not support desktop notification");
-//   }
-
-//   // Let's check whether notification permissions have already been granted
-//   else if (Notification.permission === "granted") {
-//     // If it's okay let's create a notification
-//     var notification = new Notification("Hi there!");
-//   }
-
-//   // Otherwise, we need to ask the user for permission
-//   else if (Notification.permission !== "denied") {
-//     Notification.requestPermission().then(function (permission) {
-//       // If the user accepts, let's create a notification
-//       if (permission === "granted") {
-//         var notification = new Notification("Hi there!");
-//       }
-//     });
-//   }
-// }
