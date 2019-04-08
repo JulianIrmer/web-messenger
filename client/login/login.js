@@ -139,7 +139,7 @@ fetch(IP_LOCAL+'/api/login', {
     console.log(response);
     if(response.isLoggedIn == true){
       if(screenWidth < 900){
-        window.location.replace('/messenger');
+        window.location.replace('/messenger/');
       }
       else{
         window.location.replace('/mobile/');

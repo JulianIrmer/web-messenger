@@ -174,6 +174,7 @@ inputForm.addEventListener('submit', (event) => {
 
     // add new message to the ui
     appendMessage(data);
+    updateLastMsg(data.recipient);
   };
 });
 

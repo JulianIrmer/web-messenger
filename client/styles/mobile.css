@@ -305,7 +305,7 @@ html{
 .float-right{
   float: right;
   margin-right: 10px;
-  background-color: #fff;
+  background-color: rgb(250,250,250);
   animation: slide-right-left 250ms ease-in;
 }
 
@@ -323,6 +323,7 @@ html{
 .float-left{
   margin-left: 15px;
   float: left;
+  background-color: rgb(220,220,255);
   animation: slide-left-right 200ms ease-in;
 }
 
