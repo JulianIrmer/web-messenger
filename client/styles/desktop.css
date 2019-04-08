@@ -13,6 +13,7 @@ body{
 .messenger-wrapper{
   height: 100%;
   width: 100%;
+  max-width: 80%;
   top: 20px;
   background-color: rgba(0,0,0,0);
   animation: all 1000ms linear;
@@ -26,7 +27,7 @@ body{
 }
 
 .contact-header{
-  width: 100%;
+  width: 104%;
 }
 
 .content-header{
@@ -102,10 +103,10 @@ body{
 .logout-btn{
   width: 24px;
   height: 24px;
-  padding: 10px 0px 0px 0px;
+  padding: 10px 30px 0px 0px;
   float: right;
   border: 0;
-  background-color: rgb(100,100,240);
+  background-color: rgb(100,100,255);
 }
 
 .logout-btn > img{

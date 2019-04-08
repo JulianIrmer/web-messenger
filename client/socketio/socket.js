@@ -5,7 +5,7 @@
   // document.querySelector('.is-typing').classList.add('hidden');
   // document.querySelector('.online-status').classList.add('hidden');
 
-
+// document.onload = () => {
   socket.on('connect', () => {
     sendSocketData(socket.id);
     joinAllRooms();
@@ -13,6 +13,7 @@
   
     // receive pm
     socket.on('private message', (data) => {
+      console.log(data);
       data.isRead = false;
       // push incoming messge to local data
       messagesData.push(data);
@@ -50,11 +51,11 @@
       };
     });
   });
+// };
 
-
-// document.querySelector('.is-typing').classList.add('hidden');
 
 function sendSocketData(socketID){
+
   const data = {
     socketID : socketID,
     username: currentUser

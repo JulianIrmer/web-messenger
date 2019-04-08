@@ -88,7 +88,7 @@ app.get('/messenger', authenticate, (req, res) => {
 
 // messenger mobile (width < 402)
 app.get('/mobile', authenticate, (req, res) => {
-  res.sendFile(__dirname+ '/client/messenger/mobile.html');
+  res.sendFile(__dirname+ '/client/mobile/mobile.html');
 });
 
 
