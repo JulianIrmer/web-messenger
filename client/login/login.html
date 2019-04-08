@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NAMES | LOGIN</title>
+  <link rel="stylesheet" href="/login/login.css">
+  <link rel="stylesheet" href="../styles/animation.css">
+</head>
+
+<body>
+  <div class="login-wrapper">
+    <div class="container">
+      <h1>Hello there!</h1>
+      <form action="submit" class="login">
+        <input type="text" name="loginName" class="name" placeholder="Name" value="Julian Irmer">
+        <input type="password" name="loginPassword" class="password1" placeholder="Password" value="12">
+        <button type="button" class="login-btn">Login</button>
+      </form>
+    </div>
+    
+    <button class="show">Register</button>
+    
+    <div class="container2 hidden">
+      <h1>Registration</h1>
+      <form action="submit" class="register">
+        <input type="text" class="name" placeholder="Name" name="name" required>
+        <input type="email" class="email" placeholder="Email" name="email" required>
+        <input type="password" class="password1" placeholder="Password" name="password1" required>
+        <input type="password" class="password2" placeholder="Password" name="password2" required>
+        <button type="button" class="register-btn">Register</button>
+      </form>
+    </div>
+    
+    <div class="pwHintRegister hidden">
+      <p>Passwords do not match.</p>
+    </div>
+    <div class="pwHintLogin hidden">
+      <p>Wrong password.</p>
+    </div>
+    <div class="nameHintRegister hidden">
+      <p>Name already in use.</p>
+    </div>
+    <div class="nameHintLogin hidden">
+      <p>No user with this name found.</p>
+    </div>
+  </div>
+  <script src="/login/login.js"></script>
+</body>
+</html>

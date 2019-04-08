@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NAMES | WEB MESSENGER</title>
+  <link rel="stylesheet" href="./desktop.css">
+  <link rel="stylesheet" href="../../styles/scrollbar.css">
+</head>
+<body>
+  <div class="messenger-wrapper">
+    <div class="contact-area">
+      <div class="header contact-header">
+        <button type="button" class="add-contact-btn">
+          +
+        </button>
+        <span class="username"></span>
+        <button class="logout-btn">X</button>
+        <form action="submit" class="add-contact-form hidden">
+            <input type="email" name="email" class="add-contact-input" placeholder="Email...">
+          </form>
+      </div>
+      <div class="contact-list">
+        <!-- <div class="contact-search">
+          <input type="text" class="search-input" placeholder="search...">
+        </div> -->
+        <ul class="contact-ul">
+
+        </ul>
+      </div>
+    </div>
+    <div class="content-area">
+      <div class="header content-header">
+        <span class="contact-name">Web Messenger</span>
+        <span class="online-status hidden">Online</span>
+        <span class="is-typing hidden">is typing...</span>
+      </div>
+      <div class="chat-area">
+        <div class="message-area">
+
+        </div>
+        <div class="input-area">
+          <form class="input-form hidden">
+            <input class="message-input" id="message-input" type="text" name="message" placeholder="Write a message...">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../socketio/socket.io.js"></script>
+  <script src="../../socketio/socket.js"></script>
+  <script src="./desktop.js"></script>
+</body>
+</html>
+

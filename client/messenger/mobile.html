@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NAMES | WEB MESSENGER</title>
+  <link rel="stylesheet" href="./mobile.css">
+  <link rel="stylesheet" href="../../styles/scrollbar.css">
+</head>
+<body>
+  <div class="contact-area">
+    <div class="contact-header">
+      <button class="logout-btn">X</button>
+      <div class="title">NAMES | WEB MESSENGER</div>
+      <button class="add-contact-btn">+</button>
+      <form class="add-contact-form">
+        <input type="text" class="add-contact-input zero-wdith" placeholder="Add contact...">
+      </form>
+      <div class="added-hint hidden">Contact added!</div>
+      <div class="row">
+        <button class="chats-btn">Chats</button>
+        <button class="menu-btn">Profile</button>
+      </div>
+    </div>
+    <ul class="contact-ul">
+
+    </ul>
+  </div>
+
+  <div class="content-area hidden">
+    <div class="content-header">
+      <button class="back"><</button>
+      <span class="contact-name" data-name="">Contact Name </span>
+      <br>
+      <span class="online-status hidden">Online</span>
+      <span class="is-typing hidden">is typing...</span> 
+      <button class="open-menu">.<br>.<br>.</button>
+    </div>
+
+    <div class="chat-area">
+      <div class="message-area">
+        
+      </div>
+      <div class="input-area">
+        <form class="input-form">
+          <input class="message-input" id="message-input" type="text" name="message" placeholder="Write a message..." autocomplete="off">
+        </form>
+      </div>
+    </div>
+    <button class="back back2"><</button>
+  </div>
+
+
+  <div class="menu hidden"><button class="delete-contact">Delete</button></div>
+  
+  <script src="../socketio/socket.io.js"></script>
+  <script src="../socketio/socket.js"></script>
+  <script src="./mobile.js"></script>
+</body>
+</html>

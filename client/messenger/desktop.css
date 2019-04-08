@@ -1,0 +1,293 @@
+html{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body{
+  text-align: center;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+.messenger-wrapper{
+  height: 840px;
+  width: 961px;
+  top: 20px;
+  background-color: rgba(0,0,0,0);
+  animation: all 1000ms linear;
+  opacity: 0.85;
+  box-shadow: 5px 5px 30px rgba(100,100,100,0.4)
+}
+
+.header{
+  position: absolute;
+  height: 60px;
+  top: 0px;
+  background-color: rgb(100,100,255);
+}
+
+.contact-header{
+  width: 300px;
+}
+
+.content-header{
+  width: 670px;
+}
+
+.contact-name{
+  line-height: 55px;
+  margin: 10px 0 0 20px;
+  font-size: 150%;
+}
+
+.contact-area{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(240,240,240);
+  height: 850px;
+  width: 300px;
+  border-right: 2px solid grey;
+  z-index: 20;
+}
+
+.content-area{
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  background-color: rgb(240,240,240);
+  height: 850px;
+  width: 670px;
+}
+
+.contact-search{
+  padding: 5px;
+  margin: 75px 0 0 0;
+  background-color: rgb(240,240,240);
+}
+
+.add-contact-btn{
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 30px;
+  height: 30px;
+  margin: 10px 20px 10px 10px;
+  background-color: rgb(230,230,230);
+  border: 0;
+}
+
+.add-contact-form{
+  position: absolute;
+  top: 45px;
+  transition: all 2s ease-in-out;
+}
+
+.add-contact-input{
+  width: 350px;
+  height: 25px;
+  background-color: rgb(230,230,230);
+  padding: 3px;
+  margin-left: 30px;
+  color: rgb(40,40,40);
+  border: 0;
+}
+
+.username{
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  font-size: 120%;
+}
+
+.logout-btn{
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  border: 0;
+  background-color: rgb(100,100,240);
+  color: rgb(137,0,0);
+}
+
+.search-input{
+  width: 350px;
+  height: 25px;
+  background-color: rgb(230,230,230);
+  padding: 3px;
+  margin-left: 18px;
+  color: rgb(40,40,40);
+  border: 0;
+  opacity: 0.8;
+}
+
+.contact-ul{
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+  margin: 60px 0px 0px 0px;
+  background-color: rgb(240,240,240);
+}
+
+.contact-li{
+  height: 110px;
+  width: 100%;
+  padding: 10px 0 10px 0px; 
+  animation: slide-bottom-top 150ms ease-in;
+}
+
+.contact-li:hover{
+  background-color: rgb(233,233,233);
+}
+
+.contact-div{
+  width: 392px;
+  height: 100px;
+  padding: 4px;
+}
+
+.p-name{
+  font-size: 140%;
+  font-weight: 300;
+  color: black;
+}
+
+.p-lastmsg{
+  color: rgb(80,80,80);
+  
+}
+
+.p-date{
+  float: right;
+  margin: -30px 20px 0 0;
+}
+
+.new-indicator{
+  width: 15px;
+  height: 15px;
+  background-color: rgb(0, 129, 0);
+  border-radius: 50%;
+  line-height: 15px;
+}
+
+.new-message{
+  font-weight: bold;
+  color: rgb(20,20,20);
+}
+
+.devider{
+  width: 70%;
+  height: 1px;
+  border-bottom: 2px solid rgba(230,230,230,0.8);
+  margin: 0 auto;
+}
+
+/* ################################### */
+.input-area{
+  position: absolute;
+  top: 800px;
+  width: 570px;
+  height: 38px;
+  padding-left: 30px;
+}
+
+.message-input{
+  width: 520px;
+  height: 30px;
+  /* background-color: rgb(230,230,230); */
+  color: rgb(40,40,40);
+  border: 0;
+  font-size: 120%;
+  padding: 2px;
+}
+
+.message-area{
+  margin-top: 65px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 700px;
+  width: 670px;
+}
+
+.message-row{
+  width: 670px;
+  min-height: 40px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.message{
+  min-height: 25px;
+  min-width: 100px;
+  max-width: 70%;
+  background-color: rgb(230,230,240);
+  padding: 4px 4px 0px 8px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  text-align: left;
+  box-shadow: 1px 1px 5px rgba(200,200,200,0.5);
+}
+
+.message-time-stamp{
+  padding: 0;
+  font-size: 70%;
+  float: right;
+}
+
+.float-right{
+  float: right;
+  margin-right: 15px;
+  background-color: rgb(220,220,255);
+  animation: slide-right-left 200ms ease-in;
+}
+
+.float-left{
+  float: left;
+  margin-left: 15px;
+  animation: slide-left-right 200ms ease-in;
+}
+
+.active{
+  background-color: rgb(220, 220, 255);
+}
+
+.hidden{
+  visibility: hidden;
+  display: none;
+}
+
+
+/* ########## MOBILE VIEW ############ */
+
+@keyframes slide-left-right {
+  0% {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slide-right-left {
+  0% {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes slide-bottom-top {
+  0% {
+      opacity: 0;
+      transform: translateX(15px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
