@@ -255,11 +255,13 @@ function appendMessage(data){
   hook.className = 'message-hook';
   // hook.textContent = '//';
 
-  
   msgBubble.appendChild(hook);
   msgBubble.appendChild(timeStamp);
   msgRow.appendChild(msgBubble);
-  messageArea.appendChild(msgRow);
+
+  if(contactName.innerHTML != 'Web Messenger'){
+    messageArea.appendChild(msgRow);
+  };
 
   if(data.sender == currentUser){
     msgBubble.className = 'message float-right';
@@ -268,11 +270,11 @@ function appendMessage(data){
     msgBubble.className = 'message float-left';
   };
   
-  msgBubble.appendChild(timeStamp);
-  msgRow.appendChild(msgBubble);
-  messageArea.appendChild(msgRow);
-  updateLastMsg(data.sender);
+  // msgBubble.appendChild(timeStamp);
+  // msgRow.appendChild(msgBubble);
+  // messageArea.appendChild(msgRow);
   scroll2bottom();
+  updateLastMsg(data.sender);
 };
 
 
@@ -308,6 +310,7 @@ addContactBtn.addEventListener('click', () => {
   addContactInput.classList.toggle('zero-wdith');
 });
 
+// update the message preview 
 function updateLastMsg(active){
   for(let el of messagesData){
     if((el.sender == active && el.recipient == currentUser) || (el.sender == currentUser && el.recipient == active)){
@@ -328,6 +331,7 @@ function updateLastMsg(active){
   sortList();
 };
 
+// mark new messages
 function markUnreadMessages(active){
   if(active != currentUser){
     for(let el of messagesData){
@@ -341,48 +345,12 @@ function markUnreadMessages(active){
   };
 };
 
-
+// update read status of the messages 
 function updateMsgStatus(sender){
   fetch(IP_LOCAL+'/api/updatemsgstatus/'+sender)
     .then(response => {return response.json()})
     .catch(err => console.error(err));
 };
-
-// // go back to contacts on button click and update lastmsg
-// back.addEventListener('click', () => {
-//   messagesData.forEach((item) => {
-//     item.isRead = true;
-//   });
-//   updateLastMsg(contactName.innerText);
-//   updateMsgStatus(contactName.innerText);
-//   messageArea.innerHTML = '';
-//   contactArea.classList.remove('hidden');
-//   contentArea.classList.add('hidden');
-// });
-
-// // go back to contacts on button click and update lastmsg
-// back2.addEventListener('click', () => {
-//   messagesData.forEach((item) => {
-//     item.isRead = true;
-//   });
-//   updateMsgStatus(contactName.innerText);
-//   updateLastMsg(contactName.innerText);
-//   messageArea.innerHTML = '';
-//   contactArea.classList.remove('hidden');
-//   contentArea.classList.add('hidden');
-// });
-
-// // Move input up when typing
-// messageInput.addEventListener('focus', (event) => {
-//   messageArea.style.height = '330px';
-//   chatArea.scrollTop = chatArea.scrollHeight;
-//   scroll2bottom();
-// });
-
-// // move input down when finished typing
-// messageInput.addEventListener('blur', (event) => {
-//   messageArea.style.height = '550px';
-// });
 
 // sort contact list after latest message
 // Src: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_list_number
