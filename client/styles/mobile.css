@@ -55,7 +55,7 @@ html{
 }
 
 .add-contact-input{
-  margin: 5px 0px 0px 10px;
+  margin: 5px 0px 0px 0px;
   border: 0;
   width: 80%;
   visibility: visible;
@@ -79,7 +79,7 @@ html{
   visibility: hidden;
 }
 
-.row{
+/* .row{
   position: absolute;
   top: 64px;
   width: 100%;
@@ -103,7 +103,7 @@ html{
 
 .chats-btn{
   left: 0px;
-}
+} */
 
 .contact-ul{
   width: 100%;
@@ -117,8 +117,8 @@ html{
   width: 100%;
   background-color: rgb(255,255,255);
   margin: 0 0 1px 0;
-  padding: 10px 0 10px 10px;
-  transition: all 1000ms ease-in-out;
+  padding: 10px 0 0px 10px;
+  transition: all 150ms ease-in-out;
   animation: slide-bottom-top 150ms ease-in;
 }
 

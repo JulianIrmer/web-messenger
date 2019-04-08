@@ -138,7 +138,7 @@ fetch(IP_LOCAL+'/api/login', {
   .then(response => {
     console.log(response);
     if(response.isLoggedIn == true){
-      if(screenWidth < 900){
+      if(screenWidth > 900){
         window.location.replace('/messenger/');
       }
       else{

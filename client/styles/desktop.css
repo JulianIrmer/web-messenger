@@ -77,20 +77,24 @@ body{
   height: 24px;
 }
 
-.add-contact-form{
+/* .add-contact-form{
   position: absolute;
   top: 45px;
   transition: all 2s ease-in-out;
-}
+} */
 
 .add-contact-input{
-  width: 350px;
+  width: 97%;
   height: 25px;
-  background-color: rgb(230,230,230);
+  background-color: rgb(255,255,255);
   padding: 3px;
-  margin-left: 30px;
+  margin: 50px 0px 0px 0px;
   color: rgb(40,40,40);
-  border: 0;
+}
+
+.zero-wdith{
+  width: 0%;
+  visibility: hidden;
 }
 
 .username{
