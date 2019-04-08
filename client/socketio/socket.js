@@ -28,28 +28,28 @@
       if(data.sender == contactName.innerHTML){
         if(data.status == 'typing'){
           document.querySelector('.is-typing').classList.remove('hidden');
-          document.querySelector('.online-status').classList.add('hidden');
+          // document.querySelector('.online-status').classList.add('hidden');
         };
       };
       setTimeout(() => {
         document.querySelector('.is-typing').classList.add('hidden');
-          document.querySelector('.online-status').classList.remove('hidden');
+          // document.querySelector('.online-status').classList.remove('hidden');
       }, 500)
     });
     
     
     // receive online status
-    socket.on('online status...', (data) => {
-      console.log(data.status);
-      if(data.sender == contactName.innerHTML){
-        if(data.status == 'online'){
-          document.querySelector('.online-status').classList.remove('hidden');
-        };
-        if(data.status == 'offline'){
-          document.querySelector('.online-status').classList.add('hidden');
-        };
-      };
-    });
+    // socket.on('online status...', (data) => {
+    //   console.log(data.status);
+    //   if(data.sender == contactName.innerHTML){
+    //     if(data.status == 'online'){
+    //       document.querySelector('.online-status').classList.remove('hidden');
+    //     };
+    //     if(data.status == 'offline'){
+    //       document.querySelector('.online-status').classList.add('hidden');
+    //     };
+    //   };
+    // });
   });
 // };
 
@@ -140,19 +140,19 @@ document.querySelector('.message-input').addEventListener('focus', (event) => {
 });
 
 
-document.onload = () => { 
-  const data = { 
-    sender: currentUser,
-    status: ''
-  };
+// document.onload = () => { 
+  // const data = { 
+  //   sender: currentUser,
+  //   status: ''
+  // };
 
-  window.addEventListener('focus', () => {
-    data.status = 'online';
-    socket.emit('online status', data);
-  });
+  // window.addEventListener('focus', () => {
+  //   data.status = 'online';
+  //   socket.emit('online status', data);
+  // });
 
-  window.addEventListener('blur', () => {
-    data.status = 'offline';
-    socket.emit('online status', data);
-  });
-};
+  // window.addEventListener('blur', () => {
+  //   data.status = 'offline';
+  //   socket.emit('online status', data);
+  // });
+// };

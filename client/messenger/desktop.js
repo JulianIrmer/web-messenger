@@ -236,7 +236,6 @@ function appendContact(el){
 
 // APPEND MESSAGE DIRECTLY TO UI
 function appendMessage(data){
-  // console.log(data);
   const msgRow = document.createElement('div');
   msgRow.className = 'message-row';
   
@@ -259,10 +258,7 @@ function appendMessage(data){
   msgBubble.appendChild(timeStamp);
   msgRow.appendChild(msgBubble);
 
-  if(contactName.innerHTML != 'Web Messenger'){
-    messageArea.appendChild(msgRow);
-  };
-
+  
   if(data.sender == currentUser){
     msgBubble.className = 'message float-right';
   }
@@ -270,6 +266,9 @@ function appendMessage(data){
     msgBubble.className = 'message float-left';
   };
   
+  if(contactName.innerHTML == data.sender || contactName.innerHTML == data.recipient){
+    messageArea.appendChild(msgRow);
+  };
   // msgBubble.appendChild(timeStamp);
   // msgRow.appendChild(msgBubble);
   // messageArea.appendChild(msgRow);
@@ -287,14 +286,14 @@ function scroll2bottom(){
 // CREATE HTML ELEMENTS FOR EVERY MESSAGE
 function displayMessages(name){
   messageArea.innerHTML = '';
+  contactName.innerText = name;
+  contactName.dataset.name = name;
   if(contactsData.length > 0){
     for(let el of messagesData){
       if(name == el.recipient || (currentUser == el.recipient && el.sender == name)){
         appendMessage(el);
       };
     };
-    contactName.innerText = name;
-    contactName.dataset.name = name;
     // contactArea.classList.add('hidden');
     // contentArea.classList.remove('hidden');
   };

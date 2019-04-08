@@ -13,7 +13,7 @@ body{
 .messenger-wrapper{
   height: 100%;
   width: 100%;
-  max-width: 80%;
+  max-width: 1300px;
   top: 20px;
   background-color: rgba(0,0,0,0);
   animation: all 1000ms linear;
