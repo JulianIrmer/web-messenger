@@ -41,23 +41,23 @@ function getAllData() {
   fetch(IP_LOCAL+'/api/data')
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       currentUser = response[0].name;
       userData = response[0];
       contactsData = response[1];
       messagesData = response[2];
       messagesData.sort((a,b) => a.date - b.date);
-      console.log(messagesData);
+      // console.log(messagesData);
 
-        // loop through all contacts and add the html elements to the page
-        if(contactsData != null &&  contactsData.length > 0){
-          for(let el of response[1]){
-            appendContact(el);
-            updateLastMsg(el.name);
-          };
+      // loop through all contacts and add the html elements to the page
+      if(contactsData != null &&  contactsData.length > 0){
+        for(let el of response[1]){
+          appendContact(el);
+          updateLastMsg(el.name);
         };
-        })
-        .catch((err) => {if(err){console.error(err)}})
+      };
+    })
+    .catch((err) => {if(err){console.error(err)}})
 };
 
 
@@ -67,7 +67,7 @@ addContactForm.addEventListener('submit', (event) => {
   const name = addContactInput.value.trim();
   let isValid = false;  
   const contacts = document.querySelectorAll('.p-name');
-  console.log(contacts);
+  // console.log(contacts);
 
   if(contacts.length > 0){
     for(let el of contacts){
@@ -104,7 +104,7 @@ addContactForm.addEventListener('submit', (event) => {
     })
     .then(response => {return response.json()})
     .then(response => {
-        console.log(response);
+        // console.log(response);
         if(response){
           addContactForm.classList.add('hidden');
           addContactForm.textContent = '';

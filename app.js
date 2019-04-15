@@ -226,7 +226,7 @@ app.post('/api/login', (req, res) => {
               activeUser = name;
               console.log('loggin in...');
               req.session.username = name;
-              req.session.userID = user.id
+              req.session.userID = user.id;
               console.log(req.session.username);
               res.json(data = {
                 name: name,
@@ -274,7 +274,7 @@ app.get('/api/getContacts', authenticate, (req, res) => {
         });
       }
    });
-  })
+  });
 
 
 // ########## ADD A CONTACT ##########
@@ -370,7 +370,7 @@ app.get('/api/data', authenticate, (req, res) => {
           else{
             for(let el of messages){
               if(el.sender == username || el.recipient == username){
-                msgArr.push(el)
+                msgArr.push(el);
               };
             };
             data.push(msgArr);
