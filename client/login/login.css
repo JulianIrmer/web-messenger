@@ -5,13 +5,14 @@ html{
 }
 
 body{
-  /* background-color: rgb(80, 30, 200); */
   text-align: center;
   overflow: hidden;
-  background: linear-gradient(270deg, #31345e, #3d3e46);
-  -webkit-animation: bgGradient 6s ease infinite;
+  background-color: rgba(100,100,100, 0.6);
+  background-image: url('../img/interlaced.png');
+  background-blend-mode: lighten;
+  /* -webkit-animation: bgGradient 6s ease infinite;
   -moz-animation: bgGradient 6s ease infinite;
-  animation: bgGradient 6s ease infinite;
+  animation: bgGradient 6s ease infinite; */
 }
 
 .bg-container{
@@ -30,8 +31,7 @@ body{
   padding: 20px;
   width: 350px;
   height: 390px;
-  /* background-color: rgba(100,100,240,0.7); */
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(100,100,255, 0.7);
   box-shadow: 1px 1px 1px rgba(100,100,100, 0.6);
   color: rgb(44,44,44);
   z-index: 2;

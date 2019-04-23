@@ -19,6 +19,7 @@ const isTyping = document.querySelector('.is-typing');
 const logout = document.querySelector('.logout-btn');
 const openMenu = document.querySelector('.open-menu');
 const menu = document.querySelector('.menu');
+const infoText = document.querySelector('.info-text');
 
 // GLOBAL VARIABLES 
 let currentUser;
@@ -192,6 +193,7 @@ function appendContact(el){
       el.isRead = true;
     };
     inputForm.classList.remove('hidden');
+    infoText.classList.add('hidden');
     updateLastMsg(el.name);
     updateMsgStatus(el.name);
   });
