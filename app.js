@@ -80,13 +80,13 @@ app.get('/login', (req, res) => {
 });
 
 
-// messenger desktop (width > 402)
+// messenger desktop (width > 900)
 app.get('/messenger', authenticate, (req, res) => {
   res.sendFile(__dirname+ '/client/messenger/desktop.html');
 });
 
 
-// messenger mobile (width < 402)
+// messenger mobile (width < 900)
 app.get('/mobile', authenticate, (req, res) => {
   res.sendFile(__dirname+ '/client/mobile/mobile.html');
 });
