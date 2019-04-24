@@ -7,7 +7,7 @@ html{
 body{
   text-align: center;
   /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   font-family: sans-serif;
   background-image: url('../img/interlaced.png');
 }
@@ -126,9 +126,11 @@ body{
 .contact-ul{
   padding: 0;
   width: 100%;
+  max-height: 765px;
   list-style-type: none;
   margin: 60px 0px 0px 0px;
   background-color: rgb(255,255,255);
+  overflow-y: scroll;
 }
 
 .contact-li{

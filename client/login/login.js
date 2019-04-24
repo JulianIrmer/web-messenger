@@ -119,13 +119,9 @@ registerBtn.addEventListener('click', (event) => {
 // LOGIN REQUEST
 loginBtn.addEventListener('click', (event) => {
 event.preventDefault();
-// const formData = new FormData(loginForm);
-// const name = formData.get('loginName');
-// const password = formData.get('loginPassword');
 const screenWidth = window.innerWidth;
-
 const name = loginName.value;
-const password = document.querySelector('.loginPassword').value
+const password = document.querySelector('.password1').value
 
 const data = {
   name,
