@@ -39,7 +39,7 @@ window.onload = () => {
 function getAllData() {
   messageInput.innerHTML = '';
 
-  fetch(IP_LOCAL+'/api/data')
+  fetch('/api/data')
     .then((response) => response.json())
     .then((response) => {
       // console.log(response);
@@ -50,15 +50,15 @@ function getAllData() {
       messagesData.sort((a,b) => a.date - b.date);
       // console.log(messagesData);
 
-      // loop through all contacts and add the html elements to the page
-      if(contactsData != null &&  contactsData.length > 0){
-        for(let el of response[1]){
-          appendContact(el);
-          updateLastMsg(el.name);
+        // loop through all contacts and add the html elements to the page
+        if(contactsData != null &&  contactsData.length > 0){
+          for(let el of response[1]){
+            appendContact(el);
+            updateLastMsg(el.name);
+          };
         };
-      };
-    })
-    .catch((err) => {if(err){console.error(err)}})
+        })
+        .catch((err) => {if(err){console.error(err)}})
 };
 
 
@@ -96,7 +96,7 @@ addContactForm.addEventListener('submit', (event) => {
       socketRoom: ''
     };
 
-    fetch(IP_LOCAL+'/api/addContact', {
+    fetch('/api/addContact', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -145,7 +145,7 @@ inputForm.addEventListener('submit', (event) => {
     messageInput.value = '';
     
     // post data to mongo
-    fetch(IP_LOCAL+'/api/send', {
+    fetch('/api/send', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -175,7 +175,7 @@ inputForm.addEventListener('submit', (event) => {
 
 // LOGOUT
 logout.addEventListener('click', () => {
-  fetch(IP_LOCAL+'/api/logout');
+  fetch('/api/logout');
   window.location.replace('/login');
 });
 
@@ -326,8 +326,7 @@ function markUnreadMessages(active){
 
 // update read status of the messages 
 function updateMsgStatus(sender){
-  fetch(IP_LOCAL+'/api/updatemsgstatus/'+sender)
-    .then(response => {return response.json()})
+  fetch('/api/updatemsgstatus/'+sender)
     .catch(err => console.error(err));
 };
 
