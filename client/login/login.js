@@ -16,13 +16,6 @@ const loginWrapper = document.querySelector('.login-wrapper');
 // ###################################################################
 
 
-// API URLs
-const URL_REGISTER = 'http://localhost:5000/api/register';
-const IP_LOCAL = 'http://192.168.2.25:5000';
-
-// ###################################################################
-
-
 // global variables
 let nameCache = [];
 let pwCheck = false;
@@ -30,11 +23,6 @@ let isNameValid = false;
 let isEmailValid = false;
 let loggedInName = '';
 // ###################################################################
-
-// Load the background
-// particlesJS.load('particles-js', 'particles.js-master/particlesjs.json', function () {
-//   console.log('callback - particles.js config loaded');
-// });
 
 checkCookie();
 
@@ -58,14 +46,8 @@ show.addEventListener('click', () => {
 
 // REGISTRATION REQUEST
 registerBtn.addEventListener('click', (event) => {
-  
-  // get data from input
   event.preventDefault();
-  // const formData = new FormData(registerForm);
-  // let name = formData.get('name');
-  // const email = formData.get('email');
-  // const password1 = formData.get('password1');
-  // const password2 = formData.get('password2');
+  // get data from input
   const name = document.querySelector('.name').value;
   const email = document.querySelector('.email').value;
   const password1 = document.querySelector('.password1').value;
@@ -87,7 +69,7 @@ registerBtn.addEventListener('click', (event) => {
 
   if(pwCheck == true){
     // make post request to api and send the user data
-    fetch(IP_LOCAL+'/api/register', {
+    fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -119,16 +101,17 @@ registerBtn.addEventListener('click', (event) => {
 // LOGIN REQUEST
 loginBtn.addEventListener('click', (event) => {
 event.preventDefault();
+
+const name = document.querySelector('.name').value;
+const password = document.querySelector('.password1').value;
 const screenWidth = window.innerWidth;
-const name = loginName.value;
-const password = document.querySelector('.password1').value
 
 const data = {
   name,
   password
 };
 
-fetch(IP_LOCAL+'/api/login', {
+fetch('/api/login', {
   method: 'POST',
   body: JSON.stringify(data),
   headers: {
