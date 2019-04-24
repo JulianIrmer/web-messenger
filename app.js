@@ -388,7 +388,7 @@ app.get('/api/updatemsgstatus/:sender', authenticate, (req, res) => {
   const username = req.session.username;
   const sender = req.params.sender;
 
-  console.log(username);
+  console.log(sender);
   db.Messages.update({recipient:username, sender:sender}, {$set: {isRead: true}}, {multi: true}, (err,result) => {
       if(err){
         console.error(error);
