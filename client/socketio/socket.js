@@ -1,6 +1,6 @@
 // document.onload = () => {
-  const IP_LOCAL = 'http://192.168.2.25:5000';
-  const socket = io(IP_LOCAL);
+  const IP_LOCAL = 'localhost';
+  const socket = io();
 
   // document.querySelector('.is-typing').classList.add('hidden');
   // document.querySelector('.online-status').classList.add('hidden');
@@ -13,7 +13,7 @@
   
     // receive pm
     socket.on('private message', (data) => {
-      console.log(data);
+      // console.log(data);
       data.isRead = false;
       // push incoming messge to local data
       messagesData.push(data);
@@ -61,7 +61,7 @@ function sendSocketData(socketID){
     username: currentUser
   };
 
-  fetch(IP_LOCAL+'/api/socketdata', {
+  fetch('/api/socketdata', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -74,11 +74,8 @@ function sendSocketData(socketID){
 
 function getSocketData(contact){
   let result = '';
-  fetch(IP_LOCAL+'/api/getSocketID/'+contact)
-    .then(response => {return response.json()})
-    .then(response => result = response.socketID)
+  fetch('/api/getSocketID/'+contact)
     .catch(err => console.log(err));
-    return result;
 };
 
 function sendPrivatMsg(roomNumber, data){
@@ -94,7 +91,7 @@ function sendPrivatMsg(roomNumber, data){
 };
 
 function joinAllRooms(){
-  fetch(IP_LOCAL+'/api/data')
+  fetch('/api/data')
   .then(response => {
       return response.json()
   })
@@ -113,7 +110,7 @@ function joinAllRooms(){
 document.querySelector('.message-input').addEventListener('focus', (event) => {
   let i = 0;
   const activeChat = contactName.innerHTML;
-  fetch(IP_LOCAL+'/api/data')
+  fetch('/api/data')
   .then(response => {return response.json()})
   .then(response => {
     for(let el of response[0].rooms){

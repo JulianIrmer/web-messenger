@@ -43,16 +43,16 @@ window.onload = () => {
 function getAllData() {
   messageInput.innerHTML = '';
 
-  fetch(IP_LOCAL+'/api/data')
+  fetch('/api/data')
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+      // console.log(response);
       currentUser = response[0].name;
       userData = response[0];
       contactsData = response[1];
       messagesData = response[2];
       messagesData.sort((a,b) => a.date - b.date);
-      console.log(messagesData);
+      // console.log(messagesData);
 
         // loop through all contacts and add the html elements to the page
         if(contactsData != null &&  contactsData.length > 0){
@@ -73,7 +73,7 @@ addContactForm.addEventListener('submit', (event) => {
   const name = addContactInput.value.trim();
   let isValid = false;  
   const contacts = document.querySelectorAll('.p-name');
-  console.log(contacts);
+  // console.log(contacts);
 
   if(contacts.length > 0){
     for(let el of contacts){
@@ -101,7 +101,7 @@ addContactForm.addEventListener('submit', (event) => {
       socketRoom: ''
     };
 
-    fetch(IP_LOCAL+'/api/addContact', {
+    fetch('/api/addContact', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -110,7 +110,7 @@ addContactForm.addEventListener('submit', (event) => {
     })
     .then(response => {return response.json()})
     .then(response => {
-        console.log(response);
+        // console.log(response);
         if(response){
           addContactForm.classList.add('hidden');
           addContactForm.textContent = '';
@@ -150,7 +150,7 @@ inputForm.addEventListener('submit', (event) => {
     messageInput.value = '';
     
     // post data to mongo
-    fetch(IP_LOCAL+'/api/send', {
+    fetch('/api/send', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -179,7 +179,7 @@ inputForm.addEventListener('submit', (event) => {
 
 // LOGOUT
 logout.addEventListener('click', () => {
-  fetch(IP_LOCAL+'/api/logout');
+  fetch('/api/logout');
   window.location.replace('/login');
 });
 
@@ -340,8 +340,7 @@ function markUnreadMessages(active){
 
 
 function updateMsgStatus(sender){
-  fetch(IP_LOCAL+'/api/updatemsgstatus/'+sender)
-    .then(response => {return response.json()})
+  fetch('/api/updatemsgstatus/'+sender)
     .catch(err => console.error(err));
 };
 
@@ -419,26 +418,3 @@ function sortList() {
 openMenu.addEventListener('click', (e) => {
   
 });
-
-// function askForNotification(){
-//   // Let's check if the browser supports notifications
-//   if (!("Notification" in window)) {
-//     alert("This browser does not support desktop notification");
-//   }
-
-//   // Let's check whether notification permissions have already been granted
-//   else if (Notification.permission === "granted") {
-//     // If it's okay let's create a notification
-//     var notification = new Notification("Hi there!");
-//   }
-
-//   // Otherwise, we need to ask the user for permission
-//   else if (Notification.permission !== "denied") {
-//     Notification.requestPermission().then(function (permission) {
-//       // If the user accepts, let's create a notification
-//       if (permission === "granted") {
-//         var notification = new Notification("Hi there!");
-//       }
-//     });
-//   }
-// }
