@@ -28,25 +28,26 @@ html{
 }
 
 .title{
-  text-align: center;
-  margin-top: -3px;
-  font-size: 150%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 120%;
 }
 
 .add-contact-btn, .logout-btn{
-  float: left;
-  margin-left: 13px;
+  position: absolute;
+  top: 10px;
   border: 0;
   background-color: rgb(100,100,255);
 }
 
 .add-contact-btn{
-  margin-top: 5px;
+  left: 1%;
 }
 
 .logout-btn{
-  float: right;
-  margin-right: 13px;
+  right: 1%;
 }
 
 .logout-btn > img, .add-contact-btn > img{
@@ -55,9 +56,11 @@ html{
 }
 
 .add-contact-input{
-  margin: 5px 0px 0px 0px;
+  position: absolute;
+  top: 50px;
   border: 0;
   width: 80%;
+  max-width: 300px;
   visibility: visible;
   padding: 7px;
   transition: all 400ms ease-in-out;
