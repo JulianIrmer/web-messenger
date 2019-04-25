@@ -53,8 +53,12 @@ registerBtn.addEventListener('click', (event) => {
   const password1 = document.querySelector('.register-password1').value;
   const password2 = document.querySelector('.register-password2').value;
 
+
   if (password1 != password2) {
     pwHintRegister.classList.remove('hidden');
+    setTimeout(() => {
+      pwHintRegister.classList.add('hidden');
+    }, 2000);
     pwCheck = false;
   } else {
     pwCheck = true;
@@ -67,7 +71,7 @@ registerBtn.addEventListener('click', (event) => {
     password1,
   };
 
-  if(pwCheck == true){
+  if(pwCheck == true && (name.length == 0 || email.length < 6)){
     // make post request to api and send the user data
     fetch('/api/register', {
       method: 'POST',
@@ -79,7 +83,13 @@ registerBtn.addEventListener('click', (event) => {
     .then((response) => {return response.json()})
     .then((response) => {
       if(response.message == 'success'){
-        nameHintRegister.classList.add('hidden');
+        nameHintRegister.classList.remove('hidden');
+        nameHintRegister.style.backgroundColor = 'green';
+        nameHintRegister.innerText = 'Registered!'
+        setTimeout(() => {
+          nameHintRegister.classList.add('hidden');
+        }, 2000);
+
         console.log('User registered');
         window.location.replace('/mobile/');
       }
@@ -87,11 +97,17 @@ registerBtn.addEventListener('click', (event) => {
         nameHintRegister.classList.remove('hidden');
         nameHintRegister.innerText = 'Email already in use.';
         console.log('Email already in use');
+        setTimeout(() => {
+          nameHintRegister.classList.add('hidden');
+        }, 2000);
       }
       else if(response.name == false){
         nameHintRegister.classList.remove('hidden');
         nameHintRegister.innerText = 'Name already in use.'
         console.log('Name already in use');
+        setTimeout(() => {
+          nameHintRegister.classList.add('hidden');
+        }, 2000);
       };
     })
     .catch((err) =>{if(err){console.log(err)}});
@@ -130,6 +146,13 @@ fetch('/api/login', {
       else{
         window.location.replace('/mobile/');
       };
+    }
+    else{
+      nameHintRegister.classList.remove('hidden');
+      nameHintRegister.innerText = 'No user with this name exists or the entered password is wrong.'
+      setTimeout(() => {
+        nameHintRegister.classList.add('hidden');
+      }, 3000);
     };
   })
   .catch((err) => console.error(err));
