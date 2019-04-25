@@ -104,9 +104,10 @@ app.post('/api/register', (req, res) => {
     if(err){
       console.error(err);
     }
-    else if(result){
+    else if(result != null){
       console.error('name not valid');
-      res.json({name: false})
+      console.log(result);
+      res.json({name: false});
     }
     else{
       // Check if email is available

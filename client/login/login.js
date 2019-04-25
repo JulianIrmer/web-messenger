@@ -48,10 +48,10 @@ show.addEventListener('click', () => {
 registerBtn.addEventListener('click', (event) => {
   event.preventDefault();
   // get data from input
-  const name = document.querySelector('.name').value;
-  const email = document.querySelector('.email').value;
-  const password1 = document.querySelector('.password1').value;
-  const password2 = document.querySelector('.password2').value;
+  const name = document.querySelector('.register-name').value;
+  const email = document.querySelector('.register-email').value;
+  const password1 = document.querySelector('.register-password1').value;
+  const password2 = document.querySelector('.register-password2').value;
 
   if (password1 != password2) {
     pwHintRegister.classList.remove('hidden');
@@ -102,8 +102,8 @@ registerBtn.addEventListener('click', (event) => {
 loginBtn.addEventListener('click', (event) => {
 event.preventDefault();
 
-const name = document.querySelector('.name').value;
-const password = document.querySelector('.password1').value;
+const name = document.querySelector('.login-name').value;
+const password = document.querySelector('.login-password').value;
 const screenWidth = window.innerWidth;
 
 const data = {
