@@ -8,11 +8,19 @@ body{
   text-align: center;
   overflow: hidden;
   background-color: rgba(100,100,100, 0.6);
-  background-image: url('../img/interlaced.png');
+  background-image: url(../img/interlaced.png);
   background-blend-mode: lighten;
+  min-width: 275px;
   /* -webkit-animation: bgGradient 6s ease infinite;
   -moz-animation: bgGradient 6s ease infinite;
   animation: bgGradient 6s ease infinite; */
+}
+
+@media screen and (max-width: 900px){
+  body{
+    background-blend-mode: unset;
+    background-image: url(../img/interlaced.png);
+  }
 }
 
 .bg-container{
@@ -39,8 +47,11 @@ body{
   opacity: 1;
 }
 
+.container{
+  height: 250px;
+}
+
 .login, .register{
-  margin-top: 40px;
   text-align: center;
   color: rgb(44,44,44);
 }
@@ -48,7 +59,7 @@ body{
 .email, .password1, .password2, .name{
   padding: 3px;
   font-size: 140%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   box-shadow: 1px 1px 1px rgba(100,100,100, 0.6);
 }
 
@@ -64,7 +75,7 @@ body{
 }
 
 .login-btn{
-  margin-top: 132px;
+  margin-top: 20px;
 }
 
 .login-btn:hover, .register-btn:hover{
@@ -76,21 +87,14 @@ body{
   display: none;
 }
 
-#particles-js{
-  filter: blur(8px);
-  z-index: 0;
-  height: 1000px;
-  width: 2000px;
-}
-
 .show{
+  position: relative;
   margin: 50px auto;
   width: 279px;
   height: 40px;
   border: none;
   transition: all 300ms;
   font-size: 140%;
-  /* box-shadow: 5px 5px 10px rgba(0,0,0,0.2); */
   box-shadow: 1px 1px 1px rgba(100,100,100, 0.6);
 }
 
@@ -102,11 +106,14 @@ body{
   position: absolute;
   top: 200px;
   left: 50%;
-  height: 35px;
+  width: 90%;
+  height: auto;
   transform: translateX(-50%);
   background-color: rgb(240,80,80);
-  padding: 0 5px 0 5px;
+  padding: 5px;
+  opacity: 0.9;
   z-index: 2;
+  font-weight: bold;
 }
 
 .test-btn{
@@ -129,10 +136,7 @@ body{
 
   .show{
     width: 100%;
-    top: 10px;
-    right: 0px;
     height: 40px;
-    left: 0;
     margin: 0 auto;
   }
 }
