@@ -33,8 +33,7 @@ const sessConfig = {
   name: 'sid',
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true
-  ,
+  saveUninitialized: true,
   // cookie: {
   //   maxAge: 1000*60*60,
   //   sameSite: true
@@ -64,7 +63,6 @@ let authenticate = (req, res, next) => {
     next();
   };
 };
-
 
 // ######### VIEW ROUTES #########
 
@@ -195,7 +193,7 @@ app.post('/api/login', (req, res) => {
     (err, user) => {
     if (err) {
       console.error(err);
-    } else if (!user) {
+    } else if (user == null) {
       res.json({
         'message': 'no user'
       });
@@ -211,7 +209,7 @@ app.post('/api/login', (req, res) => {
         else{
           // getting pw from password collection to compare
           bcrypt.compare(password, result.password).then((response) => {
-            if (!response) {
+            if (response == false) {
               console.log('password wrong!');
               res.json({
                 'login': false

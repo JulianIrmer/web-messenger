@@ -71,7 +71,7 @@ registerBtn.addEventListener('click', (event) => {
     password1,
   };
 
-  if(pwCheck == true && (name.length == 0 || email.length < 6)){
+  if(pwCheck == true && name.length > 0 && email.length > 6){
     // make post request to api and send the user data
     fetch('/api/register', {
       method: 'POST',
